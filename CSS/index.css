@@ -1,0 +1,394 @@
+.main {
+    height: 455px;
+    width: 980px;
+    margin-left: 220px;
+    margin-top: 10px;
+}
+
+.main_left {
+    float: left;
+    width: 720px;
+}
+
+.main_right {
+    float: right;
+    width: 250px;
+    height: 455px;
+}
+
+.news {
+    border: solid 1px #e4e4e4;
+}
+
+.news_hd {
+    position: relative;
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: dotted 1px #e4e4e4;
+}
+
+.news_hd>a {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 5px;
+}
+
+.news_hd>a::after {
+    content: '\e920';
+    font-family: 'icomoon';
+}
+
+.news_bd {
+    height: 130px;
+}
+
+.news_bd ul li {
+    height: 25px;
+    line-height: 25px;
+    margin-left: 15px;
+}
+
+.quick_service {
+    margin-top: -1px;
+    height: 210px;
+    border: solid 1px #e4e4e4;
+    border-bottom: 0;
+}
+
+.quick_service ul li {
+    float: left;
+    width: 62px;
+    height: 70px;
+    text-align: center;
+    border-bottom: solid 1px #e4e4e4;
+    border-right: solid 1px #e4e4e4;
+}
+
+.quick_service ul li:nth-child(4n) {
+    border-right: 0;
+}
+
+.quick_service ul li a>i {
+    display: inline-block;
+    margin-top: 10px;
+    width: 26px;
+    height: 25px;
+}
+
+.quick1 {
+    background: url(../images/icons.png);
+    background-position: -16px -15px;
+}
+
+.quick2 {
+    background: url(../images/icons.png);
+    background-position: -78px -15px;
+}
+
+.quick3 {
+    background: url(../images/icons.png);
+    background-position: -141px -15px;
+}
+
+.quick4 {
+    background: url(../images/icons.png);
+    background-position: -203px -15px;
+}
+
+.quick5 {
+    background: url(../images/icons.png);
+    background-position: -16px -88px;
+}
+
+.quick6 {
+    background: url(../images/icons.png);
+    background-position: -78px -88px;
+}
+
+.quick7 {
+    background: url(../images/icons.png);
+    background-position: -141px -88px;
+}
+
+.quick8 {
+    background: url(../images/icons.png);
+    background-position: -203px -88px;
+}
+
+.quick9 {
+    background: url(../images/icons.png);
+    background-position: -16px -158px;
+}
+
+.quick10 {
+    background: url(../images/icons.png);
+    background-position: -78px -158px;
+}
+
+.quick11 {
+    background: url(../images/icons.png);
+    background-position: -141px -158px;
+}
+
+.quick12 {
+    background: url(../images/icons.png);
+    background-position: -205px -158px;
+}
+
+.main_ad {
+    margin-top: 9px;
+}
+
+.recommend {
+    margin-top: 10px;
+    height: 160px;
+}
+
+.recom_hd {
+    float: left;
+    height: 163px;
+    width: 208px;
+    text-align: center;
+    line-height: 150px;
+    background-color: #5c5251;
+}
+
+.recom_bd ul li {
+    position: relative;
+    float: left;
+    width: 248px;
+    height: 163px;
+}
+
+.recom_bd ul li:nth-child(-n+3)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 145px;
+    background-color: #dddddd;
+}
+
+.guess_like {
+    position: relative;
+    margin-top: 30px;
+    height: 270px;
+}
+
+.guess_hd {
+    height: 30px;
+    line-height: 30px;
+}
+
+.guess_hd h3 {
+    color: #333333;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.guess_hd span {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.guess_hd span a::after {
+    content: '\ea2e';
+    font-family: 'icomoon';
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.guess_bd {
+    margin-top: 10px;
+    height: 230px;
+    border: solid 1px #ededed;
+}
+
+.guess_bd ul li {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 230px;
+}
+
+.guess_bd ul li:last-child {
+    width: 198px;
+}
+
+.guess_bd ul li:nth-child(-n+5)::after {
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    right: 0;
+    width: 1px;
+    height: 60px;
+    background-color: #ededed;
+}
+
+.guess_bd ul li div {
+    margin-left: 15px;
+    width: 185px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.guess_bd ul li p {
+    padding-left: 35px;
+    margin-top: 5px;
+}
+
+.guess_bd ul li span {
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 5px;
+    color: #df3033;
+    font-size: 18px;
+}
+
+.interesting {}
+
+.inter {}
+
+.inter_hd {}
+
+.inter_bd {}
+
+.appliance {
+    margin-top: 30px;
+}
+
+.app {
+    height: 480px;
+}
+
+.app_hd {
+    position: relative;
+    height: 30px;
+    line-height: 20px;
+    border-bottom: solid 2px #df3033;
+}
+
+.app_hd h3 {
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.app_hd div {
+    float: right;
+}
+
+.app_hd ul li {
+    float: left;
+    position: relative;
+    padding: 0 10px;
+}
+
+.app_hd ul li:nth-child(-n+8)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    margin-top: 6px;
+    width: 1px;
+    height: 10px;
+    background-color: #999999;
+}
+
+.app_bd {
+    width: 1200px;
+    height: 360px;
+    border-left: solid 1px #ededed;
+    border-bottom: solid 1px #ededed;
+    border-right: solid 1px #ededed;
+}
+
+.app_bd>div {
+    float: left;
+}
+
+.app_bd div:first-child {
+    padding-top: 10px;
+    width: 208px;
+    height: 360px;
+    background-color: #f9f9f9;
+}
+
+.app_bd div:first-child ul {
+    margin-left: 15px;
+}
+
+.app_bd div:first-child ul li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    width: 80px;
+    text-align: center;
+    border-bottom: solid 1px #ededed;
+}
+
+.app_bd div:nth-child(2) {
+    width: 329px;
+    height: 360px;
+}
+
+.app_bd div:nth-child(3) {
+    width: 220px;
+    height: 360px;
+    border-right: solid 1px #ededed;
+}
+
+.app_bd div:nth-child(3) a:first-child {
+    display: inline-block;
+    border-bottom: solid 1px #ededed;
+}
+
+.app_bd div:nth-child(4) {
+    width: 221px;
+    height: 360px;
+    border-right: solid 1px #ededed;
+
+}
+
+.app_bd div:last-child {
+    width: 220px;
+    height: 360px;
+}
+
+.app_bd div:last-child a:first-child {
+    display: inline-block;
+    border-bottom: solid 1px #ededed;
+}
+
+.app_footer {
+    margin-top: 24px;
+}
+
+.div2 .app_bd div:first-child>a {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.div2 .app_bd div:nth-child(3)>a {
+    display: inline-block;
+    margin-top: 24px;
+    padding-left: 15px;
+}
+
+.div2 .app_bd div:nth-child(4)>a {
+    display: inline-block;
+    margin-top: 70px;
+    margin-left: 25px;
+}
+
+.div2 .app_bd div:last-child>a {
+    display: inline-block;
+    margin-top: 23px;
+    padding-left: 15px;
+}
