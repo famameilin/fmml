@@ -1,0 +1,136 @@
+header {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 1200px;
+    height: 70px;
+    border-bottom: solid 2px #b1191a;
+}
+
+footer {
+    height: auto;
+    background-color: #ffffff;
+}
+
+.register_main {
+    margin-top: 20px;
+    height: 520px;
+    border: solid 1px #dddddd;
+}
+
+.register_main_head {
+    padding: 0 10px;
+    height: 40px;
+    line-height: 38px;
+    background-color: #ececec;
+    border-bottom: solid 1px #dddddd;
+}
+
+.register_main_head h3 {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 400;
+}
+
+.login {
+    float: right;
+    font-size: 14px;
+}
+
+.login a {
+    color: #b1191a;
+}
+
+.register_main_form {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 550px;
+    height: 370px;
+}
+
+.register_main_form ul li {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.register_main_form ul li label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+.register_main_form ul li input[type=text],
+.register_main_form ul li input[type=password] {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    border: solid 2px #dddddd;
+}
+
+.error {
+    color: #df3033;
+}
+
+.error i {
+    display: inline-block;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/error.png);
+    vertical-align: middle;
+}
+
+.success {
+    color: green;
+}
+
+.success i {
+    display: inline-block;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/success.png);
+    vertical-align: middle;
+}
+
+.register_main_form .degree {
+    margin-left: 180px;
+    margin-bottom: 0;
+    color: #b2b2b2;
+}
+
+.degree em {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+.ruo {
+    background-color: #de1111;
+}
+
+.zhong {
+    background-color: #40b83f;
+}
+
+.qiang {
+    background-color: #f79100;
+}
+
+.agreed {
+    margin-left: 90px;
+    margin-top: 30px;
+    color: #4d4d4d;
+}
+
+.agreed a {
+    color: #1ba1e6;
+}
+
+.register_main_form ul li:last-child button {
+    margin-left: 120px;
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #c81623;
+}
