@@ -1,0 +1,262 @@
+/* 把我们所有标签的内外边距清零 */
+* {
+    margin: 0;
+    padding: 0;
+    /* css3盒子模型 */
+    box-sizing: border-box;
+}
+
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+    font-style: normal
+}
+
+/* 去掉li 的小圆点 */
+li {
+    list-style: none
+}
+
+img {
+    /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle
+}
+
+button {
+    /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+    cursor: pointer
+}
+
+a {
+    color: #666;
+    text-decoration: none
+}
+
+a:hover {
+    color: #c81623
+}
+
+button,
+input {
+    /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    /* 默认有灰色边框我们需要手动去掉 */
+    border: 0;
+    outline: none;
+}
+
+body {
+    /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+    -webkit-font-smoothing: antialiased;
+    margin: 0 auto;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #666;
+    width: 100%;
+    max-width: 960px;
+    min-width: 320px;
+}
+
+.hide,
+.none {
+    display: none
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.ad {
+    height: 45px;
+    width: 100%;
+    background-color: #333333;
+}
+
+.ad ul li {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.ad ul li:nth-child(1) {
+    width: 8%;
+}
+
+.ad ul li:nth-child(2) {
+    width: 10%;
+}
+
+.ad ul li:nth-child(3) {
+    width: 57%;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.ad ul li:nth-child(4) {
+    width: 25%;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #F63515;
+}
+
+.ad ul li:nth-child(1) img {
+    width: 10px;
+    height: 10px;
+}
+
+.ad ul li:nth-child(2) img {
+    width: 30px;
+    height: 30px;
+}
+
+.search {
+    position: fixed;
+    width: 100%;
+    max-width: 960px;
+    min-width: 320px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 45px;
+}
+
+.btn img {
+    width: 20px;
+    height: 18px;
+}
+
+.input {
+    position: relative;
+    margin: 7px 50px 0;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.jd_icon {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd.png);
+    background-size: 100%;
+}
+
+.jd_icon::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 30px;
+    width: 1px;
+    height: 20px;
+    background-color: #cccccc;
+}
+
+label {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    background-size: 200px;
+}
+
+input {
+    position: absolute;
+    left: 70px;
+    padding-left: 10px;
+    vertical-align: top;
+    height: 30px;
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.silder img {
+    width: 100%;
+}
+
+.brand {
+    border-radius: 10px 10px 0 0;
+    transform: translateY(-5px);
+}
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    margin: 10px 0;
+    width: 40px;
+}
+
+nav a span {
+    display: block;
+    font-size: 14px;
+}
+
+.news {
+    margin-top: 20px;
+}
+
+.news a:nth-child(1) {
+    float: left;
+    width: 50%;
+}
+
+.news a:nth-child(2) {
+    float: left;
+    width: 25%;
+}
+
+.news a:nth-child(3) {
+    float: left;
+    width: 25%;
+}
+
+.news a img {
+    width: 100%;
+}
+
+.news a:nth-child(n+2) {
+    border-left: solid 1px #cccccc;
+}
