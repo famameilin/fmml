@@ -1,0 +1,317 @@
+/* 把我们所有标签的内外边距清零 */
+* {
+    margin: 0;
+    padding: 0;
+    /* css3盒子模型 */
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+    font-style: normal
+}
+
+/* 去掉li 的小圆点 */
+li {
+    list-style: none
+}
+
+img {
+    /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle
+}
+
+button {
+    /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+    cursor: pointer
+}
+
+a {
+    color: #666;
+    text-decoration: none
+}
+
+button,
+input {
+    /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    /* 默认有灰色边框我们需要手动去掉 */
+    border: 0;
+    outline: none;
+}
+
+body {
+    /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #666
+}
+
+.hide,
+.none {
+    display: none
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1080px;
+    background: #f2f2f2;
+}
+
+.search {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1080px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+.search_left {
+    display: flex;
+    flex: 1;
+    margin-left: 10px;
+    height: 25px;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+
+}
+
+.search_left::before {
+    content: '';
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png)no-repeat -59px -279px;
+    background-size: 104px;
+}
+
+.user {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user::before {
+    content: '';
+    margin-bottom: -2px;
+    height: 23px;
+    width: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px;
+}
+
+.focus img {
+    padding-top: 45px;
+    width: 100%;
+}
+
+.local_nav {
+    display: flex;
+    margin-top: 5px;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.local_nav div {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.local_nav div a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.local_nav div a::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px;
+}
+
+.secondary_nav {
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nav_common {
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    text-align: center;
+    background: -webkit-linear-gradient(left, #fa5a55, #fa994d);
+}
+
+.nav_common:nth-child(n+2) {
+    border-top: 2px solid #fff;
+}
+
+.nav_items {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    line-height: 45px;
+    border-left: 1px solid #fff;
+}
+
+.nav_items a:nth-child(2) {
+    border-top: 1px solid #fff;
+}
+
+.nav_items a {
+    flex: 1;
+    color: #fff;
+    font-size: 14px;
+}
+
+.nav_items:first-child>a {
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px;
+}
+
+.nav_common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+}
+
+.nav_common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+}
+
+.main_nav {
+    margin-top: 5px;
+    padding: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.main_nav_items {
+    flex: 20%;
+}
+
+.main_nav_items a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_nav_icon {
+    width: 28px;
+    height: 28px;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 28px;
+    margin-top: 5px;
+}
+
+.sales_box {
+    margin-top: 5px;
+    background-color: #fff;
+}
+
+.sales_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+}
+
+.sales_head h2 {
+    position: relative;
+    margin-left: 10px;
+    width: 79px;
+    height: 15px;
+    font-size: 0;
+}
+
+.sales_head h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -20px;
+    background-size: 79px;
+
+}
+
+.more {
+    position: relative;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #fff;
+    background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 10px;
+}
+
+.more::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.row:nth-child(n+2) {
+    border-top: 1px solid #ccc;
+}
+
+.row a {
+    flex: 1;
+}
+
+.row a:first-child {
+    border-right: 1px solid #ccc;
+}
+
+.row a img {
+    width: 100%;
+}
