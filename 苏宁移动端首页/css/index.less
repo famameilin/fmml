@@ -1,0 +1,84 @@
+@fontSize: 50;
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    font-size: (25rem / @fontSize);
+    color: #333;
+}
+
+.search {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    min-width: 320px;
+    max-width: 750px;
+    height: (88rem / @fontSize);
+    background-color: #FFC001;
+    align-items: center;
+
+    .login {
+        margin: (10rem / @fontSize);
+        width: (75rem / @fontSize);
+        height: (70rem / @fontSize);
+        line-height: (70rem / @fontSize);
+        text-align: center;
+        color: #fff;
+    }
+
+    input {
+        flex: 1;
+        padding: (1rem / @fontSize) (30rem / @fontSize);
+        height: (66rem / @fontSize);
+        background-color: #FFF2CC;
+        border-radius: (33rem / @fontSize);
+    }
+
+    .classification {
+        margin: (11rem / @fontSize) (25rem / @fontSize) (7rem / @fontSize) (24rem / @fontSize);
+        width: (44rem / @fontSize);
+        height: (70rem / @fontSize);
+        background: url(../images/classify.png);
+        background-size: 100%;
+    }
+}
+
+.banner {
+    img {
+        width: 100%;
+    }
+}
+
+.ad {
+    display: flex;
+
+    div {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+nav {
+    margin-top: (10rem / @fontSize);
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 20%;
+        height: (140rem / @fontSize);
+
+        img {
+            width: (82rem / @fontSize);
+            height: (82rem / @fontSize);
+        }
+    }
+}

@@ -1,0 +1,69 @@
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  font-size: 0.5rem;
+  color: #333;
+}
+.search {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  min-width: 320px;
+  max-width: 750px;
+  height: 1.76rem;
+  background-color: #FFC001;
+  align-items: center;
+}
+.search .login {
+  margin: 0.2rem;
+  width: 1.5rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  color: #fff;
+}
+.search input {
+  flex: 1;
+  padding: 0.02rem 0.6rem;
+  height: 1.32rem;
+  background-color: #FFF2CC;
+  border-radius: 0.66rem;
+}
+.search .classification {
+  margin: 0.22rem 0.5rem 0.14rem 0.48rem;
+  width: 0.88rem;
+  height: 1.4rem;
+  background: url(../images/classify.png);
+  background-size: 100%;
+}
+.banner img {
+  width: 100%;
+}
+.ad {
+  display: flex;
+}
+.ad div {
+  flex: 1;
+}
+.ad div img {
+  width: 100%;
+}
+nav {
+  margin-top: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 20%;
+  height: 2.8rem;
+}
+nav div img {
+  width: 1.64rem;
+  height: 1.64rem;
+}
