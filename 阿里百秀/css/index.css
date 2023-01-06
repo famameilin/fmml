@@ -44,14 +44,19 @@ body {
 @media screen and (max-width: 767px) {
   .news div:first-child {
     width: 100% !important;
-    height: 300px !important;
   }
   .news div {
     width: 50% !important;
-    height: 256px !important;
   }
   .row h3 {
     font-size: 14px;
+  }
+  nav li {
+    padding-left: 0 !important;
+    text-align: center;
+  }
+  nav li a {
+    font-size: 12px !important;
   }
 }
 .container {
