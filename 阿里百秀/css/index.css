@@ -43,6 +43,10 @@ body {
   article {
     margin-top: 10px;
   }
+  aside {
+    margin-top: 10px;
+    padding-left: 0 !important;
+  }
 }
 @media screen and (max-width: 767px) {
   .news div:first-child {
@@ -108,7 +112,7 @@ nav li a::before {
 }
 .news div {
   float: left;
-  padding-right: 10px;
+  padding: 0 5px;
   margin-bottom: 10px;
   width: 25%;
   height: 128px;
