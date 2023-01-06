@@ -30,6 +30,9 @@ body {
   }
 }
 @media screen and (max-width: 991px) {
+  header {
+    padding-right: 0 !important;
+  }
   .logo {
     text-align: center;
   }
@@ -150,6 +153,9 @@ nav li a::before {
 }
 .puish .row img {
   width: 100%;
+}
+aside {
+  padding-right: 0 !important;
 }
 aside img {
   width: 100%;
