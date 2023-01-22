@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/interview.css">
+		<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+		<title>模拟面试</title>
+	</head>
+	<body>
+		<header>
+			<section>
+				<h1><a href="../index.html"></a>模拟面试</h1>
+			</section>
+		</header>
+		<div class="body">
+			<ul>
+				<li><a href="javascript:void(0)" onclick="enterExam()"><img src="../img/interview1.png" alt=""></a></li>
+				<li><a href="javascript:void(0)" onclick="enterExam()"><img src="../img/interview2.png" alt=""></a></li>
+				<li><a href="javascript:void(0)" onclick="enterExam()"><img src="../img/interview3.png" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="mask"></div>
+		<div class="window">
+			<span onclick="quitExam()"></span>
+			<h2>系统将自动生成企业面试题</h2>
+			<p>请在<i>30</i>分钟内作答完毕并提交 超时系统将自动提交</p>
+			<a href="./error.html">开启模拟考试</a>
+		</div>
+		<script>
+			function enterExam() {
+				document.querySelector('.window').style.display = 'block';
+				document.querySelector('.mask').style.display = 'block';
+			}
+
+			function quitExam() {
+				document.querySelector('.window').style.display = 'none';
+				document.querySelector('.mask').style.display = 'none';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,244 @@
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 750px;
+  width: 100%;
+  background-color: #f2f4f7;
+}
+header {
+  padding-top: 2.5rem;
+  background-color: #ffffff;
+  width: 100%;
+}
+section {
+  position: fixed;
+  top: 0;
+  min-width: 320px;
+  max-width: 750px;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+section h1 {
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+nav {
+  margin-top: 0.8rem;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav ul li {
+  flex: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav ul li img {
+  width: 2.72rem;
+}
+nav ul li p {
+  margin-top: 0.3rem;
+  font-size: 0.5rem;
+  text-align: center;
+  color: #707070;
+}
+nav ul li:nth-child(n+4) {
+  margin-top: 1.2rem;
+}
+.ad {
+  margin-top: 1.2rem;
+  padding-bottom: 1rem;
+}
+.ad img {
+  width: 100%;
+}
+.guidance {
+  margin-top: 0.2rem;
+  background-color: #ffffff;
+}
+.head {
+  padding: 0 0.4rem;
+  padding-top: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+.head .head_left {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.56rem;
+  font-weight: 700;
+}
+.head .head_left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.76rem;
+  height: 0.76rem;
+  background-image: url(../icons/i2.png);
+  background-size: 100%;
+}
+.head .head_right {
+  font-size: 0.44rem;
+  font-weight: 400;
+  color: #999999;
+}
+.body {
+  position: relative;
+  margin-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+.body .swiper {
+  width: 10.8rem;
+}
+.body .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  opacity: 0.4;
+  transition: 300ms;
+  transform: scale(0.8);
+}
+.body .swiper-slide a {
+  width: 6.98rem;
+  height: 7.66rem;
+}
+.body .swiper-slide a img {
+  width: 100%;
+}
+.body .swiper-slide p {
+  margin-top: 0.3rem;
+  font-size: 0.5rem;
+  width: 5.1rem;
+  color: #333333;
+}
+.body .swiper-slide-active,
+.body .swiper-slide-duplicate-active {
+  transform: scale(1);
+  z-index: 999;
+  opacity: 1;
+}
+.learn {
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+.learn .head_left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.76rem;
+  height: 0.76rem;
+  background-image: url(../icons/i1.png);
+  background-size: 100%;
+}
+.study {
+  padding-bottom: 2.6rem;
+}
+.study .swiper {
+  padding: 0.25rem;
+}
+.study .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: 6.6rem;
+  width: 5.8rem;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.study a {
+  margin-top: 0.2rem;
+  width: 5rem;
+  height: 3.42rem;
+}
+.study a img {
+  width: 100%;
+}
+.study a p {
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+  font-size: 0.56rem;
+  text-align: left;
+  color: #333333;
+}
+.study a span {
+  display: inline-block;
+  margin-left: 0.3rem;
+  margin-top: 15px;
+  width: 5.4rem;
+  font-size: 0.4rem;
+  text-align: left;
+  color: #666666;
+}
+.study a span i {
+  color: red;
+}
+footer {
+  padding-top: 0.4rem;
+  position: fixed;
+  bottom: 0;
+  min-width: 320px;
+  max-width: 750px;
+  width: 100%;
+  height: 2.2rem;
+  border-top: solid #E2E2E2 1px;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer ul li {
+  flex: 1;
+}
+footer ul a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer ul a img {
+  width: 0.8rem;
+  text-align: center;
+}
+footer ul a p {
+  margin-top: 0.2rem;
+  font-size: 0.5rem;
+  color: #666666;
+}

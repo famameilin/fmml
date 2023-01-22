@@ -1,0 +1,121 @@
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 750px;
+  width: 100%;
+}
+header {
+  min-width: 320px;
+  max-width: 750px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+}
+section {
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+section h1 {
+  position: relative;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+section h1 a {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.6rem;
+  width: 0.36rem;
+  background-image: url(../icons/return2.png);
+  background-size: 100%;
+}
+.skill_list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide a {
+  position: relative;
+  padding: 0.3rem 0.56rem;
+  display: flex;
+  border-bottom: solid 1px #F3F3F3;
+}
+.swiper-slide a img {
+  width: 4.56rem;
+  height: 3.04rem;
+}
+.swiper-slide a p {
+  margin-left: 0.52rem;
+  font-size: 0.56rem;
+  text-align: left;
+  color: #020202;
+}
+.swiper-slide a span {
+  position: absolute;
+  bottom: 1rem;
+  left: 5.5rem;
+  font-size: 0.36rem;
+  color: #727D88;
+}
+footer {
+  padding-top: 0.4rem;
+  position: fixed;
+  bottom: 0;
+  min-width: 320px;
+  max-width: 750px;
+  width: 100%;
+  height: 2.2rem;
+  border-top: solid #E2E2E2 1px;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer ul li {
+  flex: 1;
+}
+footer ul a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer ul a img {
+  width: 0.8rem;
+  text-align: center;
+}
+footer ul a p {
+  margin-top: 0.2rem;
+  font-size: 0.5rem;
+  color: #666666;
+}

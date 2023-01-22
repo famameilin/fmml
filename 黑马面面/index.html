@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/base.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<link rel="stylesheet" href="./css/swiper-bundle.min.css">
+		<title>黑马面面</title>
+	</head>
+
+	<body>
+		<header>
+			<section>
+				<h1>黑马面面</h1>
+			</section>
+			<nav>
+				<ul>
+					<li><a href=""><img src="./icons/icon1.png" alt="">
+							<p>HR面试</p>
+						</a>
+					</li>
+					<li><a href=""><img src="./icons/icon2.png" alt="">
+							<p>笔试</p>
+						</a>
+					</li>
+					<li><a href="./html/interview.html"><img src="./icons/icon3.png" alt="">
+							<p>技术面试</p>
+						</a>
+					</li>
+					<li><a href="./html/interview.html"><img src="./icons/icon4.png" alt="">
+							<p>模拟面试</p>
+						</a>
+					</li>
+					<li><a href="./html/skill.html"><img src="./icons/icon5.png" alt="">
+							<p>面试技巧</p>
+						</a>
+					</li>
+					<li><a href="./html/query.html">
+							<img src="./icons/icon6.png" alt="">
+							<p>薪资查询</p>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="ad">
+				<img src="./upload/ad1.png" alt="">
+			</div>
+		</header>
+		<div class="guidance">
+			<div class="head">
+				<div class="head_left">就业指导</div>
+				<div class="head_right">更多>></div>
+			</div>
+			<div class="body">
+				<div class="swiper swiper_body">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href=""><img src="./upload/ad2.png" alt=""></a>
+							<p>老师教你应对面试技巧</p>
+						</div>
+						<div class="swiper-slide">
+							<a href=""><img src="./upload/ad2.png" alt=""></a>
+							<p>老师教你应对面试技巧</p>
+						</div>
+						<div class="swiper-slide">
+							<a href=""><img src="./upload/ad2.png" alt=""></a>
+							<p>老师教你应对面试技巧</p>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</div>
+		<div class="learn">
+			<div class="head">
+				<div class="head_left">充电学习</div>
+				<div class="head_right">更多>></div>
+			</div>
+			<div class="study">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="">
+								<img src="./img/pic1.png" alt="">
+								<p>告别中式英语，学地道英语</p>
+								<span><i>156</i>人学习</span>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="">
+								<img src="./img/pic2.png" alt="">
+								<p>思维攻略金字塔学习思维新能力</p>
+								<span><i>125</i>人学习</span>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="">
+								<img src="./img/pic1.png" alt="">
+								<p>告别中式英语，学地道英语</p>
+								<span><i>86</i>人学习</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<ul>
+				<li>
+					<a href="index.html">
+						<img src="./icons/home.png" alt="">
+						<p>首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="./html/interview.html">
+						<img src="./icons/net.png" alt="">
+						<p>技术面试</p>
+					</a>
+				</li>
+				<li>
+					<a href="./html/interview.html">
+						<img src="./icons/ms.png" alt="">
+						<p>模拟面试</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="./icons/user.png" alt="">
+						<p>我的主页</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<script src="js/swiper-bundle.min.js"></script>
+		<script>
+			(function() {
+				var swiper = new Swiper('.swiper_body', {
+					slidesPerView: 2.5,
+					spaceBetween: 30,
+					centeredSlides: true,
+					loop: true,
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				});
+			})();
+			(function() {
+				var swiper = new Swiper('.mySwiper', {
+					slidesPerView: 2.5,
+					spaceBetween: 30,
+					loop: true,
+				});
+			})()
+		</script>
+		<script>
+
+		</script>
+	</body>
+
+</html>
