@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.main {
+				margin: 100px;
+				position: relative;
+				width: 213px;
+				height: 300px;
+				text-align: center;
+				cursor: move;
+			}
+
+			img {
+				height: 100%;
+				width: 100%;
+			}
+
+			.mark {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: lemonchiffon;
+				opacity: .6;
+			}
+
+			.big {
+				display: none;
+				position: absolute;
+				left: 330px;
+				top: 100px;
+				width: 300px;
+				height: 300px;
+				background-color: antiquewhite;
+				background-image: url(../素材.jpg);
+				background-position: 0 0;
+			}
+		</style>
+		<title>放大图</title>
+	</head>
+	<body>
+		<div class="main">
+			<img src="../素材.jpg" alt="">
+			<div class="mark"></div>
+
+		</div>
+		<div class="big"></div>
+		<script>
+			var main = document.querySelector('.main');
+			var mark = document.querySelector('.mark');
+			var big = document.querySelector('.big');
+			var img = document.querySelector('img');
+
+
+			main.addEventListener('mousemove', move);
+
+			function move(e) {
+				mark.style.display = 'block';
+				big.style.display = 'block';
+				var count = main.offsetHeight / mark.offsetWidth;
+				var backW = main.offsetWidth * count;
+				var backH = main.offsetHeight * count;
+				big.style.backgroundSize = backW + 'px ' + backH + 'px';
+				var markX = e.pageX - main.offsetLeft - mark.offsetWidth / 2;
+				var markY = e.pageY - main.offsetTop - mark.offsetHeight / 2;
+				var maxX = main.offsetWidth - mark.offsetWidth;
+				var maxY = main.offsetHeight - mark.offsetHeight;
+				if (markX <= 0) {
+					markX = 0;
+				}
+				if (markY <= 0) {
+					markY = 0;
+				}
+				if (markX >= maxX) {
+					markX = maxX;
+				}
+				if (markY >= maxY) {
+					markY = maxY;
+				}
+				mark.style.left = markX + 'px';
+				mark.style.top = markY + 'px';
+				big.style.backgroundPosition = -markX * ((backW - big.offsetWidth) / maxX) + 'px ' + -markY * ((backH -
+					big.offsetHeight) / maxY) + 'px';
+				main.addEventListener('mouseleave', function(e) {
+					big.style.display = 'none';
+					mark.style.display = 'none';
+				})
+			}
+		</script>
+	</body>
+</html>

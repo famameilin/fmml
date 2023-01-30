@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			a,
+			span,
+			i {
+				margin-left: 50px;
+			}
+		</style>
+		<title>留言板</title>
+	</head>
+	<body>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		<button>提交</button>
+		<ul>
+
+		</ul>
+		<script>
+			var btn = document.querySelector('button');
+			var text = document.querySelector('textarea');
+			var ul = document.querySelector('ul');
+			btn.onclick = function() {
+				if (text.value == '') {
+					alert('内容为空');
+				} else {
+					var num = 0;
+					var li = document.createElement('li');
+					li.innerHTML = text.value + "<i> 点赞 </i>" + "<span></span>" + "<a href = 'javascript: ;'> 删除 </a>";
+					text.value = '';
+					ul.appendChild(li);
+					var a = li.querySelector('a');
+					a.onclick = function() {
+						ul.removeChild(a.parentNode);
+					}
+					var i = li.querySelector('i');
+					var span = li.querySelector('span');
+					i.onclick = function() {
+						num++;
+						span.innerHTML = num;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

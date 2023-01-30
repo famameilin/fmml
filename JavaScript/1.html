@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var money = 0;
+        var num = 0;
+        var t;
+
+        while (num != 4) {
+            num = prompt('1.取钱\n2.存钱\n3.查询余额\n4.退出');
+            switch (parseFloat(num)) {
+                case 1: t = prompt('请输入取款数额');
+                    if (t < 0) {
+                        alert('取款不能为负数');
+                    }
+                    else {
+                        if (parseFloat(t) > money) {
+                            alert('存款不足');
+                        }
+                        else {
+                            alert('提取成功');
+                            money -= t;
+                        }
+                    }
+                    break;
+                case 2: t = prompt('请输入存款数额');
+                    if (t < 0) {
+                        alert('存款不能为负数');
+                    }
+                    else {
+                        money += parseFloat(t);
+                    }
+                    break;
+                case 3: alert('当前余额为' + money + '元');
+                    break;
+                case 4: alert('感谢使用'); break;
+                default: alert('指令输入错误，请重新输入');
+            }
+        } 
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

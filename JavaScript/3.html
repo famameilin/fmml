@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				text-align: center;
+			}
+
+			table {
+				margin: 0 auto;
+				border-collapse: collapse;
+			}
+
+			td {
+				padding: 0;
+				border: 1px solid #000;
+				width: 50px;
+				text-align: center;
+			}
+
+			button {
+				margin-bottom: 50px;
+			}
+		</style>
+		<title>动态表格</title>
+	</head>
+	<body>
+		<button>添加</button>
+		<table>
+			<thead>
+				<tr>
+					<td>姓名</td>
+					<td>科目</td>
+					<td>成绩</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+		<script>
+			var table = new Array();
+			var tbody = document.querySelector('tbody');
+			var btn = document.querySelector('button');
+			btn.onclick = function() {
+				var num = window.prompt('请输入一共几位学生');
+				num = parseInt(num);
+				for (var i = 0; i < num; i++) {
+					var name = window.prompt('请输入第' + (i + 1) + '位学生的姓名');
+					var course = window.prompt('请输入第' + (i + 1) + '位学生的课程名');
+					var score = window.prompt('请输入第' + (i + 1) + '位学生的成绩');
+					table[i] = new Star(name, course, score);
+				}
+				for (var i = 0; i < num; i++) {
+					var tr = document.createElement('tr');
+					tbody.appendChild(tr);
+					for (var k in table[i]) {
+						var td = document.createElement('td');
+						td.innerHTML = table[i][k];
+						tr.appendChild(td);
+					}
+					var del = document.createElement('td');
+					del.innerHTML = "<a href='javascript:;'>删除</a>"
+					tr.appendChild(del);
+
+				}
+				var as = document.querySelectorAll('a');
+				for (var i = 0; i < as.length; i++) {
+					as[i].onclick = function() {
+						tbody.removeChild(this.parentNode.parentNode);
+					}
+				}
+
+				function Star(name, course, score) {
+					this.name = name;
+					this.course = course;
+					this.score = score;
+				}
+			}
+		</script>
+	</body>
+</html>

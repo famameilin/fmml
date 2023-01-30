@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #ccc;
+			}
+
+			.search {
+				position: relative;
+				margin-top: 100px;
+			}
+
+			.con {
+				display: none;
+				position: absolute;
+				top: -60px;
+				width: 200px;
+				height: 50px;
+				font-size: 32px;
+				line-height: 50px;
+				background-color: #fff;
+				box-shadow: 0, 2px, 4px, rgba(0, 0, 0, 0.2);
+			}
+
+			.con::before {
+				position: absolute;
+				bottom: -5px;
+				left: 50px;
+				transform: rotate(45deg);
+				content: '';
+				width: 10px;
+				height: 10px;
+				background-color: #fff;
+			}
+
+			input {
+				width: 200px;
+			}
+		</style>
+		<title>输入框</title>
+	</head>
+	<body>
+		<div class="search">
+			<div class="con"></div>
+			<input type="search" name="" id="">
+			<button>搜索</button>
+		</div>
+		<script>
+			var con = document.querySelector('.con');
+			var inp = document.querySelector('input');
+			var btn = document.querySelector('button');
+			document.addEventListener('keyup', function(event) {
+				if (event.key === 's') {
+					inp.focus();
+				}
+			})
+			inp.addEventListener('keyup', function() {
+				if (inp.value != '') {
+					con.style.display = 'block';
+					con.innerHTML = inp.value;
+				} else {
+					con.style.display = 'none';
+				}
+			})
+			inp.addEventListener('blur', function() {
+				con.style.display = 'none';
+			})
+			inp.addEventListener('focus', function() {
+				con.style.display = 'block';
+			})
+		</script>
+	</body>
+</html>

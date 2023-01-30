@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+	</head>
+	<body>
+		<i></i> 你好
+		<script>
+			var uname = location.search.substr(1).split('=');
+			var i = document.querySelector('i');
+			i.innerHTML = uname[1];
+		</script>
+	</body>
+</html>
