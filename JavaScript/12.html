@@ -139,6 +139,8 @@
 			ul.addEventListener('touchmove', function(e) {
 				moveX = e.targetTouches[0].pageX - startX;
 				ul.style.left = X + moveX + 'px';
+				ul.style.transition = 'all .3s';
+				e.preventDefault();
 			})
 			ul.addEventListener('touchend', function() {
 				if (flag) {
