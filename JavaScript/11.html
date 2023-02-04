@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #000;
+			}
+
+			div {
+				margin-top: 50px;
+				position: relative;
+				height: 50px;
+				width: 600px;
+				background-color: #fff;
+			}
+
+			ul {
+				position: absolute;
+				left: 0;
+				display: flex;
+
+			}
+
+			li {
+				width: 100px;
+				height: 50px;
+				list-style: none;
+				text-align: center;
+				line-height: 50px;
+
+			}
+
+			a {
+				display: inline-block;
+				width: 100px;
+				height: 50px;
+				text-decoration: none;
+				color: black;
+				font-size: 24px;
+			}
+
+			span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: inline-block;
+				width: 100px;
+				height: 50px;
+				background-color: chocolate;
+			}
+
+			li:hover a {
+				color: #fff;
+			}
+		</style>
+		<title>筋斗云案例</title>
+	</head>
+	<body>
+		<div>
+			<span></span>
+			<ul>
+				<li><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">5</a></li>
+			</ul>
+		</div>
+		<script>
+			var span = document.querySelector('span');
+			var ul = document.querySelector('ul');
+			var li = ul.querySelectorAll('li');
+			var num = 0;
+			for (var i = 0; i < li.length; i++) {
+				li[i].setAttribute('data-index', i);
+				li[i].addEventListener('mouseover', function() {
+					animate(span, this.offsetLeft);
+				})
+				li[i].addEventListener('mouseleave', function() {
+					animate(span, num);
+				})
+				li[i].addEventListener('click', function() {
+					num = this.offsetLeft;
+				})
+			}
+
+			function animate(obj, target, callback) {
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function() {
+					var step = (target - obj.offsetLeft) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					if (obj.offsetLeft == target) {
+						clearInterval(obj.timer);
+						callback && callback();
+					} else {
+						obj.style.left = (obj.offsetLeft + step) + 'px';
+					}
+				}, 20)
+			}
+		</script>
+	</body>
+</html>

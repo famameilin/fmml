@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			article {
+				position: relative;
+				margin: 100px auto;
+				width: 220px;
+				height: 300px;
+				overflow: hidden;
+			}
+
+			ul,
+			ol {
+				position: absolute;
+				left: 0;
+				display: flex;
+			}
+
+			ul {
+				left: -220px;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			img {
+				height: 300px;
+				width: 220px;
+			}
+
+			ol {
+				bottom: 30px;
+				left: 50px;
+			}
+
+			ol>li {
+				border-radius: 15%;
+				margin-left: 10px;
+				width: 10px;
+				height: 10px;
+				border: 1px solid #fff;
+				transition: all .3s;
+			}
+
+			.select {
+				background-color: #fff;
+				width: 50px;
+			}
+
+			.button_left {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 2;
+			}
+
+			.button_right {
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 2;
+			}
+
+			a {
+				text-decoration: none;
+				width: 20px;
+				height: 50px;
+				background-color: rgba(0, 0, 0, .3);
+				line-height: 50px;
+				text-align: center;
+				color: #fff;
+				font-weight: 700;
+				font-size: 20px;
+			}
+		</style>
+		<title>手机轮播图</title>
+	</head>
+	<body>
+		<article>
+			<a href="javascript:;" class="button_left">&lt;</a>
+			<a href="javascript:;" class="button_right">&gt;</a>
+			<ul>
+				<li><img src="../img/1.png" alt=""></li>
+				<li><img src="../img/2.png" alt=""></li>
+				<li><img src="../img/3.jpg" alt=""></li>
+				<li><img src="../img/4.jpg" alt=""></li>
+			</ul>
+			<ol>
+			</ol>
+		</article>
+		<script>
+			var ul = document.querySelector('ul');
+			var img = ul.querySelectorAll('li');
+			var ol = document.querySelector('ol');
+			var left = document.querySelector('.button_left')
+			var right = document.querySelector('.button_right');
+			var art = document.querySelector('article');
+			var startX = 0;
+			var X = ul.offsetLeft;
+			var moveX;
+			var num = 0;
+			var flag = true;
+			for (var i = 0; i < img.length; i++) {
+				var li = document.createElement('li');
+				li.setAttribute('data-index', i);
+				img[i].setAttribute('data-index', i);
+				li.addEventListener('click', function() {
+					ol.querySelector('.select').classList.remove('select');
+					this.className = 'select';
+					num = parseInt(this.getAttribute('data-index'));
+					ul.style.left = -(num + 1) * 220 + 'px';
+
+				})
+				ol.appendChild(li);
+			}
+			ol.children[0].className = 'select';
+			var last = ul.children[0].cloneNode(true);
+			var first = ul.children[img.length - 1].cloneNode(true);
+			ul.appendChild(last);
+			ul.insertBefore(first, ul.children[0]);
+			ul.addEventListener('touchstart', function(e) {
+				startX = e.targetTouches[0].pageX;
+				X = ul.offsetLeft;
+				clearInterval(auto);
+			})
+			ul.addEventListener('touchmove', function(e) {
+				moveX = e.targetTouches[0].pageX - startX;
+				ul.style.left = X + moveX + 'px';
+			})
+			ul.addEventListener('touchend', function() {
+				if (flag) {
+					flag = false;
+					if (Math.abs(moveX) < 100) {
+						num = num;
+					} else if (moveX > 30) {
+						num--;
+					} else {
+						num++;
+					}
+					var index = num;
+					if (index > 3) {
+						index = 0;
+					}
+					if (index < 0) {
+						index = 3;
+					}
+					ul.style.left = -(num + 1) * 220 + 'px';
+					ul.style.transition = 'all .3s';
+					ol.querySelector('.select').classList.remove('select');
+					ol.children[index].className = 'select';
+					clearInterval(auto);
+					auto = setInterval(function() {
+						rightAuto();
+					}, 3000)
+				}
+			})
+			art.addEventListener('transitionend', function() {
+				if (num < 0) {
+					num = 3;
+					ul.style.transition = 'none'
+					ul.style.left = -880 + 'px';
+				}
+				if (num > 3) {
+					num = 0;
+					ul.style.transition = 'none'
+					ul.style.left = -220 + 'px';
+				}
+				flag = true;
+			})
+			right.addEventListener('click', rightAuto);
+
+			function rightAuto() {
+				if (flag) {
+					flag = false;
+					num++;
+					var index = num;
+					if (index > 3) {
+						index = 0;
+					}
+					if (index < 0) {
+						index = 3;
+					}
+					ul.style.left = -(num + 1) * 220 + 'px';
+					ul.style.transition = 'all .3s';
+					ol.querySelector('.select').classList.remove('select');
+					ol.children[index].className = 'select';
+				}
+			}
+			left.addEventListener('click', function() {
+				if (flag) {
+					flag = false;
+					num--;
+					var index = num;
+					if (index > 3) {
+						index = 0;
+					}
+					if (index < 0) {
+						index = 3;
+					}
+					ul.style.left = -(num + 1) * 220 + 'px';
+					ul.style.transition = 'all .3s';
+					ol.querySelector('.select').classList.remove('select');
+					ol.children[index].className = 'select';
+				}
+			})
+			var auto = setInterval(function() {
+				rightAuto();
+			}, 3000)
+		</script>
+	</body>
+</html>

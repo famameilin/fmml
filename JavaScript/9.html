@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			header,
+			nav,
+			section,
+			article {
+				margin-bottom: 30px;
+				height: 200px;
+				background-color: aqua;
+				text-align: center;
+				line-height: 200px;
+				font-size: 32px;
+			}
+
+			nav {
+				background-color: aquamarine;
+				height: 300px;
+			}
+
+			section {
+				height: 500px;
+			}
+
+			article {
+				height: 2000px;
+			}
+
+			div {
+				position: absolute;
+				right: 0;
+				top: 300px;
+			}
+
+			span {
+				display: none;
+			}
+
+			li {
+				list-style: none;
+			}
+		</style>
+		<title>侧边栏导航</title>
+	</head>
+	<body>
+		<header>
+			header
+		</header>
+		<nav>
+			nav
+		</nav>
+		<section>
+			banner
+		</section>
+		<article>
+			main
+		</article>
+		<div>
+			<ul>
+				<li><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><span><a href="javascript:;">3</a></span></li>
+				<li><a href="javascript:;">4</a></li>
+			</ul>
+		</div>
+		<script>
+			var head = document.querySelector('header');
+			var nav = document.querySelector('nav');
+			var banner = document.querySelector('section');
+			var bar = document.querySelector('div');
+			var span = document.querySelector('span');
+			var navTop = nav.offsetTop;
+			var bannerTop = banner.offsetTop;
+			var barTop = bar.offsetTop - navTop;
+			document.addEventListener('scroll', function() {
+				console.log(window.pageYOffset);
+				if (window.pageYOffset >= navTop) {
+					bar.style.position = 'fixed';
+					bar.style.top = barTop + 'px';
+				} else {
+					bar.style.position = 'absolute';
+					bar.style.top = '300px';
+				}
+				if (window.pageYOffset >= bannerTop) {
+					span.style.display = 'block';
+				} else {
+					span.style.display = 'none';
+				}
+			})
+			span.addEventListener('click', function() {
+				clearInterval(timer);
+				var timer = setInterval(function() {
+					var step = window.pageYOffset / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					if (window.pageYOffset == 0) {
+						clearInterval(timer);
+					} else {
+						window.scroll(0, window.pageYOffset - step);
+					}
+				}, 10)
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			article {
+				position: relative;
+				margin: 100px auto;
+				width: 365px;
+				height: 500px;
+				overflow: hidden;
+			}
+
+			ul,
+			ol {
+				position: absolute;
+				left: 0;
+				display: flex;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			img {
+				height: 500px;
+				width: 365px;
+			}
+
+			ol {
+				bottom: 50px;
+				left: 100px;
+			}
+
+			ol>li {
+				border-radius: 50%;
+				margin-left: 10px;
+				width: 10px;
+				height: 10px;
+				border: 1px solid #fff;
+			}
+
+			.select {
+				background-color: #fff;
+			}
+
+			.button_left {
+				display: none;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 2;
+			}
+
+			.button_right {
+				display: none;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 2;
+			}
+
+			a {
+				text-decoration: none;
+				width: 20px;
+				height: 50px;
+				background-color: rgba(0, 0, 0, .3);
+				line-height: 50px;
+				text-align: center;
+				color: #fff;
+				font-weight: 700;
+				font-size: 20px;
+			}
+		</style>
+		<script src="./javascript/1.js"></script>
+		<title>轮播图</title>
+	</head>
+	<body>
+		<article>
+			<a href="javascript:;" class="button_left">&lt;</a>
+			<a href="javascript:;" class="button_right">&gt;</a>
+			<ul>
+				<li><img src="../img/1.png" alt=""></li>
+				<li><img src="../img/2.png" alt=""></li>
+				<li><img src="../img/3.jpg" alt=""></li>
+				<li><img src="../img/4.jpg" alt=""></li>
+			</ul>
+			<ol>
+			</ol>
+		</article>
+	</body>
+</html>
