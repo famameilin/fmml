@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: #cdcdcd;
+			}
+
+			header {
+				padding: 10px 0;
+				height: 45px;
+				width: 100%;
+				justify-content: space-between;
+				background-color: rgba(47, 47, 47, 0.98);
+			}
+
+			section {
+				margin: 0 auto;
+				display: flex;
+				min-width: 320px;
+				max-width: 750px;
+				width: 100%;
+				justify-content: space-between;
+			}
+
+			h1 {
+				margin-left: 10px;
+				font-size: 20px;
+				width: 100px;
+				color: #ddd;
+			}
+
+			input[type='text'] {
+				margin-right: 10px;
+				padding: 0 10px;
+				width: 60%;
+				border-radius: 10px;
+				box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.3) inset;
+				overflow: hidden;
+			}
+
+			div {
+				position: relative;
+				margin: 0 auto;
+				padding: 15px 10px 10px;
+				min-width: 320px;
+				max-width: 750px;
+				width: 100%;
+			}
+
+			span {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background-color: #E6E6FA;
+				line-height: 20px;
+				text-align: center;
+				font-weight: 700;
+			}
+
+			ul,
+			ol {
+				margin-top: 20px;
+			}
+
+			li {
+				position: relative;
+				margin-bottom: 10px;
+				height: 30px;
+				background-color: #fff;
+				line-height: 30px;
+				border-radius: 5px;
+				border-left: 5px solid #629A9C;
+			}
+
+			ul>li {
+				filter: grayscale(80%);
+				opacity: 0.5;
+			}
+
+			input[type='checkbox'] {
+				position: absolute;
+				margin: 5px;
+				width: 20px;
+				height: 20px;
+			}
+
+			p {
+				margin-left: 35px;
+			}
+
+			a {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 10px;
+				width: 20px;
+				height: 20px;
+				border-radius: 14px;
+				background-color: #ccc;
+				border: 5px double #fff;
+			}
+		</style>
+		<title>todolist</title>
+	</head>
+	<body>
+		<header>
+			<section>
+				<h1>ToDoList</h1>
+				<input type="text" placeholder="添加">
+			</section>
+		</header>
+		<div class="doing">
+			<h3>正在进行</h3>
+			<span>0</span>
+			<ol>
+			</ol>
+		</div>
+		<div class="complete">
+			<h3>已经完成</h3>
+			<span>0</span>
+			<ul>
+			</ul>
+		</div>
+		<script>
+			var search = document.querySelector('input[type="text"]');
+			var ol = document.querySelector('ol');
+			var ul = document.querySelector('ul');
+			var span = document.querySelectorAll('span');
+			var data = LoadData(); //用于存储local storage中的数据并在发生更改时重新赋值
+			GetData();
+			ListData();
+			search.addEventListener('keydown', function(e) {
+				if (e.key === 'Enter') {
+					data.push({
+						value: search.value,
+						flag: false
+					});
+					SaveData();
+					GetData();
+					ListData();
+					search.value = '';
+				}
+			})
+			//从本地存储中获取数据，如果没有则返回一个空数组
+			function LoadData() {
+				var data = localStorage.getItem('data');
+				if (data == null) {
+					return [];
+				} else {
+					return JSON.parse(data);
+				}
+			}
+			//把修改之后的数据重新存储到local storage中
+			function SaveData() {
+				localStorage.setItem('data', JSON.stringify(data));
+			}
+			//根据local storage中的数据添加元素
+			function GetData() {
+				var newdata = JSON.parse(localStorage.getItem('data'));
+				//每当数据发生改变就清空当前列表内容，重新根据local storage中的数据添加元素
+				ol.innerHTML = '';
+				ul.innerHTML = '';
+				for (var j = 0; j < data.length; j++) {
+					var li = document.createElement('li');
+					//根据flag值的不同渲染到不同列表中
+					if (data[j].flag == true) {
+						li.innerHTML = "<input type='checkbox' checked='checked'><p>" + newdata[j].value +
+							"</p><a href='javascript:;'></a>";
+						ul.appendChild(li);
+					} else {
+						li.innerHTML = "<input type='checkbox'><p>" + newdata[j].value + "</p><a href='javascript:;'></a>";
+						ol.prepend(li);
+					}
+					li.setAttribute('data-index', j);
+				}
+				var a = document.querySelectorAll('a');
+				var check = document.querySelectorAll('input[type="checkbox"]');
+				for (var i = 0; i < a.length; i++) {
+					//每次渲染完成后给最新的a绑定事件
+					a[i].addEventListener('click', function() {
+						var index = this.parentNode.getAttribute('data-index');
+						this.parentNode.parentNode.removeChild(this.parentNode);
+						data.splice(index, 1);
+						SaveData();
+						//数据保存后重新调用GetData()进行渲染
+						GetData();
+						ListData();
+					})
+					//每次渲染完成后给最新的check绑定事件
+					check[i].addEventListener('click', function() {
+						var index = this.parentNode.getAttribute('data-index');
+						if (data[index].flag == true) {
+							data[index].flag = false;
+						} else if (data[index].flag == false) {
+							data[index].flag = true;
+						}
+						SaveData();
+						GetData();
+						ListData();
+					})
+				}
+			}
+			//统计当前进行的事件和完成的事件的数量
+			function ListData() {
+				var onum = 0;
+				var unum = 0;
+				if (data == null) {
+					onum = 0;
+					unum = 0;
+				} else {
+					for (var i = 0; i < data.length; i++) {
+						if (data[i].flag == false) {
+							onum++;
+						} else {
+							unum++;
+						}
+					}
+					span[0].innerHTML = onum;
+					span[1].innerHTML = unum;
+				}
+			}
+		</script>
+	</body>
+</html>
